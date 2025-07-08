@@ -1,189 +1,147 @@
-# 🎯 Ad Prediction Web Application
+🚀 Ultimate AI Ad Detection & Analysis System
+Detect advertisements in text and images with cutting-edge machine learning and OCR — all in one powerful web app!
 
-A comprehensive web application that uses machine learning to detect advertisements in both text and images. The system combines text analysis with OCR (Optical Character Recognition) to provide accurate ad detection capabilities.
+🎯 Project Overview
+This web application leverages advanced machine learning and natural language processing to analyze both text and images for detecting advertisements. It combines:
 
-## 🌟 Features
+Text classification models with comprehensive linguistic and sentiment features
 
-- **Text Analysis**: Analyze any text input to determine if it's an advertisement
-- **Image Analysis**: Upload images and extract text using OCR, then analyze for ad content
-- **Real-time Predictions**: Get instant results with confidence scores
-- **Responsive Design**: Works seamlessly on desktop and mobile devices
-- **Advanced ML Models**: Uses trained scikit-learn models with comprehensive feature extraction
+Optical Character Recognition (OCR) on images to extract embedded text
 
-## 🚀 Quick Start
+Multi-layered analysis including danger detection, emotion analysis, scam detection, and naturalness assessment
 
-### Prerequisites
+This system helps identify hidden ads, phishing attempts, or scammy content for better content moderation and user safety.
 
-- Python 3.8 or higher
-- pip (Python package installer)
-- At least 4GB RAM (for OCR processing)
+🌟 Features
+📝 Text Analysis: Input any text and get instant advertisement detection results with confidence scoring
 
-### Installation
+🖼️ Image Analysis: Upload images; the app extracts text via OCR and analyzes for ads
 
-1. **Clone or download the project files**
-   ```bash
-   # Make sure you have these files in your directory:
-   # - app.py
-   # - templates/index.html
-   # - requirements.txt
-   # - text_model.pkl
-   # - text_vectorizor.pkl
-   # - text_scaler.pkl
-   ```
+🚦 Danger Level: Evaluates risk and flags suspicious or harmful content
 
-2. **Create a virtual environment (recommended)**
-   ```bash
-   python -m venv ad_prediction_env
-   
-   # On Windows:
-   ad_prediction_env\Scripts\activate
-   
-   # On macOS/Linux:
-   source ad_prediction_env/bin/activate
-   ```
+🎭 Emotion Analysis: Detects emotional tone and intensity in the text
 
-3. **Install dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
+🔍 Scam Detection: Flags common scam types with confidence metrics
 
-4. **Download NLTK data (required for sentiment analysis)**
-   ```python
-   python -c "import nltk; nltk.download('vader_lexicon')"
-   ```
+😊 Naturalness Assessment: Determines if the content feels artificially generated or human-like
 
-5. **Verify model files exist**
-   Make sure these files are in your project directory:
-   - `text_model.pkl` - The trained text classification model
-   - `text_vectorizor.pkl` - The TF-IDF vectorizer
-   - `text_scaler.pkl` - The feature scaler
+⚡ Real-time Feedback: Fast results with loading animations and dynamic UI
 
-### Running the Application
+📱 Responsive UI: Works smoothly on desktop and mobile
 
-1. **Start the Flask server**
-   ```bash
-   python app.py
-   ```
+🔒 Secure File Handling: Image uploads validated for safety
 
-2. **Open your web browser**
-   Navigate to: `http://localhost:5000`
+RESTful API: Supports programmatic access for integration in other systems
 
-3. **Start using the application!**
-   - Use the "Text Analysis" tab to analyze text
-   - Use the "Image Analysis" tab to upload and analyze images
+🛠️ Tech Stack
+Layer	Technology / Library
+Backend	Python, Flask
+ML Models	Scikit-learn (Logistic Regression)
+NLP	NLTK (Sentiment, VADER), TextBlob
+OCR	EasyOCR
+Frontend	HTML5, CSS3, Vanilla JavaScript
+Deployment	Docker, Heroku / AWS / VPS
 
-## 📱 How to Use
+🏗️ Architecture
+Frontend
+Responsive, modern UI using semantic HTML and CSS, powered by JavaScript for asynchronous calls and real-time results display.
 
-### Text Analysis
-1. Click on the "📝 Text Analysis" tab
-2. Enter or paste your text in the text area
-3. Click "🔍 Analyze Text"
-4. View the results with confidence score
+Backend
+Flask REST API endpoints for text and image analysis. Preprocesses input, runs ML predictions, and returns JSON results.
 
-### Image Analysis
-1. Click on the "🖼️ Image Analysis" tab
-2. Upload an image by clicking the upload area or dragging and dropping
-3. Click "🔍 Analyze Image"
-4. View the extracted text and prediction results
+Machine Learning
+Pre-trained models loaded on startup for instant prediction:
 
-## 🔧 API Endpoints
+Text classification with engineered features (sentiment, POS tags, readability)
 
-The application provides REST API endpoints for programmatic access:
+OCR text extraction from images using EasyOCR
 
-### Text Prediction
-```http
-POST /predict_text
-Content-Type: application/json
+Security & Validation
+Sanitizes inputs, restricts upload file types, and handles errors gracefully.
 
-{
-    "text": "Your text here"
-}
-```
+📦 Installation & Setup
+Requirements
+Python 3.8+
 
-### Image Prediction
-```http
-POST /predict_image
-Content-Type: multipart/form-data
+4GB+ RAM for OCR
 
-image: [image file]
-```
+pip package manager
 
-### Health Check
-```http
-GET /health
-```
+Step-by-step
+bash
+Copy
+Edit
+# Clone repo
+git clone https://github.com/YourUsername/ad-prediction-webapp.git
+cd ad-prediction-webapp
 
-## 🏗️ Architecture
+# (Optional) Create virtual environment
+python -m venv venv
+source venv/bin/activate   # Linux/macOS
+venv\Scripts\activate      # Windows
 
-### Backend Components
-- **Flask Web Server**: Handles HTTP requests and serves the web interface
-- **ML Models**: Pre-trained scikit-learn models for text classification
-- **OCR Engine**: EasyOCR for text extraction from images
-- **Feature Extraction**: Comprehensive text analysis including sentiment, keywords, and linguistic features
+# Install dependencies
+pip install -r requirements.txt
 
-### Frontend Components
-- **Responsive HTML/CSS**: Modern, mobile-friendly interface
-- **JavaScript**: Handles form submissions, file uploads, and result display
-- **Real-time Updates**: Dynamic loading indicators and result animations
+# Download NLTK data for sentiment
+python -c "import nltk; nltk.download('vader_lexicon')"
 
-## 🛠️ Troubleshooting
+# Verify model files are present:
+# - text_model.pkl
+# - text_vectorizor.pkl
+# - text_scaler.pkl
 
-### Common Issues
+# Run app locally
+python app.py
+Open your browser at http://localhost:5000
 
-1. **"Module not found" errors**
-   - Make sure you've installed all requirements: `pip install -r requirements.txt`
-   - Verify you're using the correct Python environment
+💻 Usage Guide
+Web Interface
+Text Analysis
 
-2. **Model files not found**
-   - Ensure `text_model.pkl`, `text_vectorizor.pkl`, and `text_scaler.pkl` are in the project directory
-   - Check file permissions
+Navigate to the "📝 Text Analysis" tab
 
-3. **OCR not working**
-   - EasyOCR requires internet connection for first-time setup
-   - Ensure sufficient RAM (4GB+) for OCR processing
+Paste or type your text
 
-4. **Port already in use**
-   - Change the port in `app.py`: `app.run(port=5001)`
-   - Or kill the process using port 5000
+Click Analyze Text
 
-### Performance Tips
+View detailed results with confidence, danger score, emotion, scam type, and naturalness
 
-- **For better OCR performance**: Use high-quality, high-contrast images
-- **For faster loading**: Keep image files under 5MB
-- **For production**: Set `debug=False` in `app.py`
+Image Analysis
 
-## 🔒 Security Considerations
+Go to "🖼️ Image Analysis" tab
 
-- File upload validation is implemented for image types
-- Input sanitization for text analysis
-- For production deployment, consider:
-  - Adding authentication
-  - Implementing rate limiting
-  - Using HTTPS
-  - Setting up proper error logging
+Upload image (supports JPG, PNG, GIF, WebP)
 
-## 📊 Model Information
+Click Analyze Image
 
-The application uses enhanced machine learning models trained on advertisement data:
+View extracted text with bounding boxes and ad detection results
 
-- **Text Features**: 22+ comprehensive features including sentiment, keywords, linguistic patterns
-- **Model Type**: Logistic Regression (best performing from multiple tested models)
-- **Accuracy**: ~99.4% on test data
-- **Preprocessing**: Advanced text cleaning and feature extraction
+API Endpoints
+Endpoint	Method	Description	Payload Example
+/predict_text	POST	Analyzes text for ads	{ "text": "your input text" }
+/predict_image	POST	Analyzes image for ads (multipart)	image: <file>
+/health	GET	Server health check	N/A
 
-## 🚀 Deployment Options
+🔬 Model Details
+Type: Logistic Regression (best accuracy)
 
-### Local Development
-- Use the built-in Flask development server (as shown above)
+Features: 22+ linguistic and sentiment-based features, including TF-IDF vectorized text
 
-### Production Deployment
-- **Heroku**: Add `Procfile` with `web: python app.py`
-- **AWS/GCP**: Use container deployment with Docker
-- **VPS**: Use Gunicorn with Nginx reverse proxy
+Training Dataset: Curated ads and non-ads text samples
 
-### Docker Deployment
-Create a `Dockerfile`:
-```dockerfile
+Accuracy: ~99.4% on test set
+
+OCR: EasyOCR extracts text from images for text classification
+
+⚙️ Deployment Options
+Local
+Run via Flask development server (for testing only)
+
+Docker
+dockerfile
+Copy
+Edit
 FROM python:3.9-slim
 WORKDIR /app
 COPY requirements.txt .
@@ -191,16 +149,65 @@ RUN pip install -r requirements.txt
 COPY . .
 EXPOSE 5000
 CMD ["python", "app.py"]
-```
+Build & run:
 
-## 📝 License
+bash
+Copy
+Edit
+docker build -t ad-prediction-app .
+docker run -p 5000:5000 ad-prediction-app
+Cloud
+Heroku: Use Procfile with web: python app.py
 
-This project is for educational and research purposes. Please ensure you have the right to use the trained models in your specific use case.
+AWS/GCP: Deploy using Docker containers or serverless functions
 
-## 🤝 Contributing
+VPS: Setup Gunicorn + Nginx reverse proxy for production-grade service
 
-Feel free to submit issues, feature requests, or improvements to enhance the application's functionality.
+🛠️ Troubleshooting
+Issue	Solution
+ModuleNotFoundError	Run pip install -r requirements.txt
+Missing model files	Confirm .pkl files exist in project root
+OCR slow or fails	Check RAM, use high-quality images, verify internet for EasyOCR first run
+Port 5000 busy	Kill conflicting process or change port in app.py
+API returns error	Check JSON payload, enable debug logs
 
-## 📞 Support
+🔐 Security Considerations
+Strict file type checking on uploads
 
-If you encounter any issues or need help with setup, please check the troubleshooting section above or create an issue with detailed error information.
+Sanitize user input to prevent injection attacks
+
+For production, enforce HTTPS, API auth, and rate limiting
+
+Log errors securely for audit trail
+
+📸 Screenshots & Demo
+(Add screenshots or GIFs here for better UX understanding)
+
+📈 Performance & Limitations
+OCR accuracy depends on image quality and clarity
+
+Models trained on specific ad datasets; may require retraining for new domains
+
+Real-time analysis optimized for small to medium text and image sizes
+
+📚 References & Resources
+Scikit-learn Documentation
+
+EasyOCR GitHub
+
+NLTK VADER Sentiment Analysis
+
+🤝 Contributing
+Contributions welcome! Feel free to:
+
+Open issues
+
+Submit pull requests
+
+Suggest new features or improvements
+
+📄 License
+MIT License - free to use for personal, educational, and commercial projects with attribution.
+
+📞 Support
+Facing issues? Reach out via GitHub Issues or email at your-email@example.com
