@@ -127,8 +127,8 @@ Virtual environment (recommended)
 ### **Quick Start**
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/ad-detector.git
-cd ad-detector
+git clone https://github.com/AsnanP/Ad-Detector.git
+cd Ad-Detector
 
 # Create virtual environment
 python -m venv venv
@@ -148,30 +148,6 @@ FLASK_DEBUG=True
 SECRET_KEY=your-secret-key-here
 ```
 
-## 📁 Project Structure
-
-```
-ad-detector/
-├── app.py                 # Main Flask application
-├── models/               # Pre-trained ML models
-│   ├── ensemble_model.pkl
-│   └── vectorizer.pkl
-├── static/              # CSS, JS, Images
-│   ├── css/
-│   ├── js/
-│   └── images/
-├── templates/           # HTML templates
-│   ├── index.html
-│   ├── results.html
-│   └── base.html
-├── utils/              # Utility functions
-│   ├── feature_extraction.py
-│   ├── ocr_processor.py
-│   └── analyzer.py
-├── requirements.txt    # Dependencies
-└── README.md          # This file
-```
-
 ## 🚀 API Endpoints
 
 ### **Text Analysis**
@@ -180,7 +156,7 @@ POST /api/analyze-text
 Content-Type: application/json
 
 {
-  "text": "Your text content here"
+  "text": "asnanp.netlify.app"
 }
 ```
 
