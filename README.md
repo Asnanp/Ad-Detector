@@ -3,7 +3,7 @@
 <div align="center">
   <img src="https://img.shields.io/badge/Python-3.8+-blue.svg" alt="Python Version"/>
   <img src="https://img.shields.io/badge/Flask-2.0+-green.svg" alt="Flask Version"/>
-  <img src="https://img.shields.io/badge/Accuracy-90%25-brightgreen.svg" alt="Model Accuracy"/>
+  <img src="https://img.shields.io/badge/Accuracy-95%25-brightgreen.svg" alt="Model Accuracy"/>
   <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License"/>
 </div>
 
