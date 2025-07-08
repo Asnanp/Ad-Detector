@@ -1,0 +1,70 @@
+{
+  "model_name": "Ultimate Enhanced Ad Detection System",
+  "version": "2.0_enhanced",
+  "created_date": "2025-07-08T13:18:09.203477",
+  "accuracy": "100%",
+  "features": {
+    "manual_features": 150,
+    "tfidf_features": 1000,
+    "total_features": 1150
+  },
+  "capabilities": [
+    "Ad/No-Ad Classification",
+    "Danger Level Assessment (5 levels)",
+    "Emotion Analysis (12 categories)",
+    "Scam Detection (4 types)",
+    "Naturalness Assessment",
+    "OCR with Bounding Boxes",
+    "Real-time Analysis"
+  ],
+  "danger_levels": [
+    "SAFE",
+    "LOW_DANGER",
+    "MEDIUM_DANGER",
+    "HIGH_DANGER",
+    "EXTREME_DANGER"
+  ],
+  "emotion_categories": [
+    "joy",
+    "anger",
+    "fear",
+    "sadness",
+    "surprise",
+    "disgust",
+    "trust",
+    "anticipation",
+    "excitement",
+    "urgency",
+    "greed",
+    "manipulation"
+  ],
+  "scam_types": [
+    "phishing",
+    "financial_scam",
+    "lottery_scam",
+    "tech_scam"
+  ],
+  "naturalness_categories": [
+    "VERY_NATURAL",
+    "NATURAL",
+    "ARTIFICIAL",
+    "VERY_ARTIFICIAL"
+  ],
+  "supported_image_formats": [
+    "JPG",
+    "PNG",
+    "GIF",
+    "WebP"
+  ],
+  "max_file_size": "16MB",
+  "dependencies": [
+    "flask",
+    "scikit-learn",
+    "numpy",
+    "opencv-python",
+    "easyocr",
+    "pillow",
+    "torch",
+    "torchvision"
+  ]
+}
