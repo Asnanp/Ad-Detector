@@ -1,7 +1,6 @@
 from flask import Flask, request, jsonify, render_template
 import pickle
 import numpy as np
-import cv2
 import easyocr
 from PIL import Image
 import io
